@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* Base layer: Set up custom properties and global styles */
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+  }
+
+  body {
+    /* Use Tailwind’s utility classes via @apply for consistency */
+    @apply bg-[var(--background)] text-[var(--foreground)];
+    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Components layer: Custom component classes */
+@layer components {
+  .text-title {
+    @apply text-7xl uppercase leading-[1.2em] font-medium;
+  }
+
+  .text-description {
+    @apply text-[32px] uppercase leading-[1.25em] font-medium;
+  }
+}
+
+/* Utilities layer: Custom utility classes */
+@layer utilities {
+  /* Custom rounded class for a 20px border radius */
+  .rounded-20 {
+    border-radius: 20px;
+  }
 }
