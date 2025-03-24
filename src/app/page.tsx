@@ -1,7 +1,8 @@
-import { Navbar } from "components/app/components/navbar";
-import { Footer } from "components/app/components/footer";
+import { Navbar } from "components/app/components/layout/navbar";
+import { Footer } from "components/app/components/layout/footer";
 import { ArtGallery } from "./components/art-gallery";
 import { MoreSection } from "./components/MoreSection";
+import AboutMe from "./components/home/about-me";
 
 export default function Home() {
     const artWorks = [
@@ -69,7 +70,7 @@ export default function Home() {
             </header>
 
             <MoreSection />
-            {/* <AboutMe/> */}
+            <AboutMe/>
             <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start"></main>
             <Footer />
         </div>

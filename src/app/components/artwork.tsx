@@ -9,10 +9,18 @@ interface CardProps {
     imageAlt: string;
     imageWidth: number;
     imageHeight: number;
-    number:number;
+    number: number;
 }
 
-export const Artwork: FunctionComponent<CardProps> = ({ title, href, imageSrc, imageAlt, imageWidth, imageHeight, number }) => {
+export const Artwork: FunctionComponent<CardProps> = ({
+    title,
+    href,
+    imageSrc,
+    imageAlt,
+    imageWidth,
+    imageHeight,
+    number,
+}) => {
     return (
         <div>
             <Image
@@ -23,18 +31,12 @@ export const Artwork: FunctionComponent<CardProps> = ({ title, href, imageSrc, i
                 className="rounded-20 object-cover"
                 style={{ aspectRatio: imageWidth / imageHeight }}
             />
-            <a href={href}>
+            <a href={href} className="flex gap-8 items-center mt-3 text-sm font-normal uppercase">
+                <span className="opacity-40">{number}</span>
+                <span>{title}</span>
 
-                <span>
-                {number}
-
-                </span>
-                <span>
-                {title}
-                </span>
-
-<ArrowRight/>
-                </a>
+                <ArrowRight />
+            </a>
         </div>
     );
 };
