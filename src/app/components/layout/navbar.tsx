@@ -1,6 +1,6 @@
-import HamburgerMenu from "./icons/hamburger";
-import Logo from "./icons/logo";
-import ThemeToggle from "./icons/themeToggle";
+import HamburgerMenu from "../icons/hamburger";
+import Logo from "../icons/logo";
+import ThemeToggle from "../icons/themeToggle";
 
 export function Navbar() {
     return (
