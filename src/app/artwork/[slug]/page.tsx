@@ -1,9 +1,11 @@
+'use client'
 
-import  ArtGallery  from "components/art-gallery";
+import  Footer  from "components/layout/footer";
+import  ArtGallery from "components/art-gallery";
 import  MoreSection  from "components/more-section";
 import AboutMe from "components/home/about-me";
+import { usePathname } from 'next/navigation';
 import  Navbar  from "components/layout/navbar";
-import  Footer  from "components/layout/footer";
 
 export default function Home() {
     const artWorks = [
@@ -56,12 +58,14 @@ export default function Home() {
             imageHeight: 544,
         },
     ];
+    const pathname = usePathname()
 
     return (
         <div>
             <Navbar />
             <header className="mt-[120px]">
                 <h1 className="text-title px-20">
+                <p>Post: {pathname.split('/').pop()}</p>
                     Vincent Van Gogh. <br />
                     post-impressionist <br />
                     painter and artist

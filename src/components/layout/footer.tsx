@@ -1,7 +1,7 @@
 import ArrowTopRight from "../icons/arrow-top-right";
 import { GoToTopPage } from "../go-to-top-page";
 
-export function Footer() {
+export default function Footer() {
     const links = [
         {
             name: "Linkedin",

@@ -1,4 +1,4 @@
-export const MoreSection = () => {
+export default function MoreSection() {
     return (
         <section className="px-20 space-y-12">
             <h2 className="text-title ">
@@ -14,4 +14,4 @@ export const MoreSection = () => {
             </p>
         </section>
     );
-};
+}
